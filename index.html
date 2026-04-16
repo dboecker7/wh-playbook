@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WH · Family Office Meeting Playbook · May 2026</title>
+<style>
+  :root {
+    --navy: #1A2B4A;
+    --teal: #028090;
+    --teal-lt: #02A8BD;
+    --gold: #9A7B2F;
+    --amber: #C97B0A;
+    --purple: #534AB7;
+    --purple-lt: #EEEDFE;
+    --teal-bg: #E1F5EE;
+    --amber-bg: #FAEEDA;
+    --gray: #6B7A8D;
+    --light: #F4F7FB;
+    --rule: #D0D9E6;
+    --text: #1A2B4A;
+    --muted: #5F6E82;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Georgia', serif; font-size: 15px; line-height: 1.7; color: var(--text); background: #fff; }
+  @media print { .sidebar { display: none; } .main { margin-left: 0; } .page-break { page-break-before: always; } body { font-size: 13px; } }
+
+  .sidebar { position: fixed; top: 0; left: 0; width: 220px; height: 100vh; background: var(--navy); overflow-y: auto; padding: 28px 0; z-index: 100; }
+  .sidebar-logo { padding: 0 20px 20px; font-family: 'Arial', sans-serif; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B8AAF; border-bottom: 0.5px solid #2E4060; margin-bottom: 16px; }
+  .sidebar-title { font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: #6B8AAF; padding: 6px 20px 2px; margin-top: 10px; }
+  .sidebar a { display: block; padding: 7px 20px; font-family: 'Arial', sans-serif; font-size: 12px; color: #9BBED8; text-decoration: none; transition: color 0.15s, background 0.15s; }
+  .sidebar a:hover { color: #fff; background: #243852; }
+  .sidebar a.phase { color: #C8DFF0; font-weight: bold; }
+
+  .main { margin-left: 220px; max-width: 820px; padding: 0 48px 80px; }
+
+  .cover { background: var(--navy); color: #fff; padding: 60px 48px 48px; margin-left: -48px; margin-right: -48px; }
+  .cover-label { font-family: 'Arial', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal-lt); margin-bottom: 16px; }
+  .cover h1 { font-family: 'Georgia', serif; font-size: 34px; font-weight: normal; line-height: 1.25; margin-bottom: 16px; color: #fff; }
+  .cover-sub { font-family: 'Arial', sans-serif; font-size: 14px; color: #9BBED8; margin-bottom: 32px; }
+  .cover-meta { display: flex; gap: 32px; border-top: 0.5px solid #2E4060; padding-top: 20px; }
+  .cover-meta-item { font-family: 'Arial', sans-serif; font-size: 12px; }
+  .cover-meta-item span { display: block; color: #6B8AAF; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3px; }
+
+  .section { margin-top: 56px; }
+  .section-label { font-family: 'Arial', sans-serif; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; }
+  h2 { font-family: 'Georgia', serif; font-size: 26px; font-weight: normal; color: var(--navy); margin-bottom: 16px; line-height: 1.2; }
+  h3 { font-family: 'Arial', sans-serif; font-size: 14px; font-weight: bold; color: var(--navy); margin-top: 28px; margin-bottom: 8px; letter-spacing: 0.02em; }
+  h4 { font-family: 'Arial', sans-serif; font-size: 12px; font-weight: bold; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 20px; margin-bottom: 6px; }
+  p { margin-bottom: 12px; color: #2C3E50; }
+
+  .phase-header { background: var(--navy); color: #fff; margin: 48px -48px 0; padding: 28px 48px; display: flex; align-items: baseline; gap: 20px; }
+  .phase-number { font-family: 'Georgia', serif; font-size: 40px; color: var(--teal-lt); opacity: 0.7; line-height: 1; flex-shrink: 0; }
+  .phase-title-block { flex: 1; }
+  .phase-title { font-family: 'Georgia', serif; font-size: 22px; font-weight: normal; color: #fff; line-height: 1.2; }
+  .phase-meta { font-family: 'Arial', sans-serif; font-size: 12px; color: #9BBED8; margin-top: 4px; }
+  .phase-confidence { font-family: 'Arial', sans-serif; font-size: 11px; padding: 4px 12px; border-radius: 12px; flex-shrink: 0; }
+  .conf-live { background: #E1F5EE; color: #085041; }
+  .conf-partial { background: #FAEEDA; color: #633806; }
+  .conf-deck { background: #F1EFE8; color: #5F5E5A; }
+
+  .audience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+  .audience-box { border-radius: 6px; padding: 16px 18px; }
+  .audience-box.investor { background: var(--purple-lt); border-left: 3px solid var(--purple); }
+  .audience-box.client { background: var(--teal-bg); border-left: 3px solid var(--teal); }
+  .audience-label { font-family: 'Arial', sans-serif; font-size: 9px; font-weight: bold; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px; }
+  .investor .audience-label { color: var(--purple); }
+  .client .audience-label { color: var(--teal); }
+  .audience-box ul { padding-left: 16px; font-size: 13px; line-height: 1.6; }
+  .audience-box ul li { margin-bottom: 4px; }
+
+  .callout { border-left: 3px solid var(--teal); background: var(--light); padding: 14px 18px; margin: 18px 0; border-radius: 0 6px 6px 0; font-family: 'Arial', sans-serif; font-size: 13px; }
+  .callout.warning { border-color: var(--amber); background: var(--amber-bg); }
+  .callout.critical { border-color: #CC0000; background: #FCEBEB; }
+  .callout.optional { border-color: var(--gold); background: #FDFAF3; }
+  .callout strong { font-weight: bold; display: block; margin-bottom: 4px; }
+
+  .script-box { background: var(--navy); color: #C8DFF0; border-radius: 8px; padding: 18px 22px; margin: 16px 0; font-family: 'Georgia', serif; font-size: 14px; font-style: italic; line-height: 1.65; position: relative; }
+  .script-label { font-family: 'Arial', sans-serif; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal-lt); font-style: normal; margin-bottom: 8px; }
+  .script-speaker { font-family: 'Arial', sans-serif; font-size: 11px; color: #6B8AAF; font-style: normal; margin-top: 10px; }
+
+  .data-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 16px 0; }
+  .data-table th { font-family: 'Arial', sans-serif; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding: 8px 12px; border-bottom: 1px solid var(--rule); text-align: left; }
+  .data-table td { padding: 9px 12px; border-bottom: 0.5px solid var(--rule); vertical-align: top; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table .col-phase { font-weight: bold; color: var(--navy); font-family: 'Arial', sans-serif; white-space: nowrap; }
+  .badge { display: inline-block; font-family: 'Arial', sans-serif; font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: bold; }
+  .badge-live { background: #E1F5EE; color: #085041; }
+  .badge-partial { background: #FAEEDA; color: #633806; }
+  .badge-deck { background: #F1EFE8; color: #5F5E5A; }
+  .badge-optional { background: #FDF6E3; color: #7A5C00; border: 1px solid #C97B0A; }
+
+  .picture-note { display: flex; gap: 14px; align-items: flex-start; padding: 12px 16px; background: var(--light); border-radius: 6px; margin: 10px 0; font-size: 13px; }
+  .picture-icon { width: 32px; height: 32px; background: var(--teal); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 16px; flex-shrink: 0; }
+  .picture-note p { margin: 0; line-height: 1.5; }
+  .picture-note strong { display: block; color: var(--navy); font-family: 'Arial', sans-serif; font-size: 12px; margin-bottom: 2px; }
+
+  .objection-block { margin: 16px 0; border: 0.5px solid var(--rule); border-radius: 8px; overflow: hidden; }
+  .obj-q { background: var(--light); padding: 12px 16px; font-family: 'Arial', sans-serif; font-size: 13px; font-weight: bold; color: var(--navy); border-bottom: 0.5px solid var(--rule); }
+  .obj-a { padding: 12px 16px; font-size: 14px; line-height: 1.6; color: #2C3E50; }
+  .obj-owner { font-family: 'Arial', sans-serif; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+
+  hr { border: none; border-top: 0.5px solid var(--rule); margin: 32px 0; }
+
+  .doc-footer { background: var(--light); margin: 56px -48px -80px; padding: 24px 48px; font-family: 'Arial', sans-serif; font-size: 11px; color: var(--muted); border-top: 0.5px solid var(--rule); }
+
+  .pull-quote { border-left: 3px solid var(--gold); padding: 6px 18px; margin: 24px 0; font-family: 'Georgia', serif; font-style: italic; font-size: 17px; color: var(--navy); line-height: 1.5; }
+  .pull-quote cite { display: block; font-family: 'Arial', sans-serif; font-size: 11px; font-style: normal; color: var(--muted); margin-top: 6px; letter-spacing: 0.05em; }
+
+  /* Diagram wrapper */
+  .diagram-wrap { margin: 24px -16px 8px; overflow-x: auto; }
+  .diagram-wrap svg { min-width: 600px; }
+
+  /* SVG classes mirrored for inline use */
+  .svgt { font-family: 'Arial', sans-serif; font-size: 14px; fill: #1A2B4A; }
+  .svgts { font-family: 'Arial', sans-serif; font-size: 12px; fill: #5F6E82; }
+  .svgth { font-family: 'Arial', sans-serif; font-size: 14px; font-weight: 500; fill: #1A2B4A; }
+</style>
+</head>
+<body>
+
+<nav class="sidebar">
+  <div class="sidebar-logo">Wealth Horizons</div>
+  <div class="sidebar-title">Overview</div>
+  <a href="#overview">The two audiences</a>
+  <a href="#at-a-glance">Meeting at a glance</a>
+  <a href="#credentials">WH credentials</a>
+  <div class="sidebar-title">Phases</div>
+  <a class="phase" href="#phase1">01 — Opening</a>
+  <a class="phase" href="#phase2">02 — Framework</a>
+  <a class="phase" href="#phase3">03 — Meet TARA</a>
+  <a class="phase" href="#phase4">04 — Live demos</a>
+  <a class="phase" href="#phase5">05 — Close</a>
+  <div class="sidebar-title">Engineering</div>
+  <a href="#demo-scripts">Demo scripts</a>
+  <a href="#confidence-map">Confidence map</a>
+  <a href="#objections">Objection catalogue</a>
+  <a href="#failure">Failure protocol</a>
+  <div class="sidebar-title">Assets</div>
+  <a href="#picture-notes">Picture notes</a>
+</nav>
+
+<div class="main">
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-label">Internal Working Document · Draft v0.2 · April 2026</div>
+  <h1>Family Office Meeting<br>Playbook — May 2026</h1>
+  <div class="cover-sub">Five family office meetings · Dual audience (investor + client) · 100 minutes each</div>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><span>Playbook owners</span>Christoph Zahneissen · Brian Singer</div>
+    <div class="cover-meta-item"><span>Input required from</span>Lotta, Renato, Alex, Tim, Jens</div>
+    <div class="cover-meta-item"><span>Deadline</span>Playbook meeting — April 17</div>
+    <div class="cover-meta-item"><span>Status</span>Draft for team input</div>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<div class="section" id="overview">
+  <div class="section-label">Framing</div>
+  <h2>Two audiences. One meeting.<br>Both must leave believing.</h2>
+
+  <p>Each May meeting contains two distinct audiences who need fundamentally different things from the same 100 minutes. The playbook must address both simultaneously without the meeting feeling split or unfocused. TARA is the red thread that holds the two narratives together.</p>
+
+  <div class="audience-grid">
+    <div class="audience-box investor">
+      <div class="audience-label">Investor audience</div>
+      <ul>
+        <li>Evaluating the platform's commercial viability and defensibility</li>
+        <li><strong>Key selling points:</strong>
+          <ul style="margin-top:4px">
+            <li>Institutional-grade investment framework (Singer Moberg 4-horizon, peer-reviewed) — previously available only to large institutions</li>
+            <li>Renato Staub's Guardian Intelligence: the only forward-looking geometric risk model built for family wealth — validated by 500 independent 30-year Monte Carlo simulations</li>
+            <li>Proprietary covariance matrix (7–8 layers) covering all asset classes — cannot be replicated by standard advisors</li>
+            <li>AI + deep investment expertise: the only combination at this quality level in the market</li>
+            <li>CaaS architecture: WH is instance one of a repeatable white-label platform — scalable without proportional headcount growth</li>
+            <li>Family offices are shifting from short-term to long-horizon strategy — exactly where WH plays</li>
+          </ul>
+        </li>
+        <li><strong>Key question:</strong> <em>"Is this a sustainable business that outperforms the alternatives available to us?"</em></li>
+        <li><strong>Success signal:</strong> Schedules a due diligence session with Christoph + Alex</li>
+      </ul>
+    </div>
+    <div class="audience-box client">
+      <div class="audience-label">Family office / client audience</div>
+      <ul>
+        <li>Evaluating whether TARA is genuinely useful for their family's most important decisions</li>
+        <li><strong>Key selling points:</strong>
+          <ul style="margin-top:4px">
+            <li>Singer Moberg framework: portfolio structured across 4 nested horizons (Policy/Strategic/Dynamic/Tactical) — each with its own allocation logic and risk model, personalised to your family's situation</li>
+            <li>Renato's Guardian Intelligence: forward-looking risk signals that see the hidden beta drift and structural risks your current advisors are missing — surfaced by TARA before your quarterly meeting</li>
+            <li>PAR (Proportional Allocation Rule): your portfolio automatically positioned relative to valuation gaps — discipline your advisors cannot sustain under market pressure</li>
+            <li>TARA as companion: she watches your family between meetings, notices patterns before they become crises, and structures decisions before you have to ask</li>
+            <li>Fully personalised: CoreLens adapts every TARA interaction to how each family member actually thinks</li>
+          </ul>
+        </li>
+        <li><strong>Key question:</strong> <em>"Will this actually help my family make better decisions at the moments that matter?"</em></li>
+        <li><strong>Success signal:</strong> Requests a NorthStar session / onboarding conversation</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>The dual narrative principle</strong>
+    Every element of the meeting speaks to both audiences at once. The SM/Renato framework is the "ticket to the concert" for investors (institutional grade) AND a demonstration of personalised clarity for clients (my portfolio, forward-looking, across four horizons). TARA is architectural defensibility for investors AND companion intelligence for families.
+  </div>
+
+  <div class="callout warning">
+    <strong>Which audience is in the room?</strong>
+    Before each meeting, Christoph must confirm: investor-primary, client-primary, or both? The phase notes flag where to expand or compress accordingly.
+  </div>
+</div>
+
+<!-- MEETING ARC DIAGRAM -->
+<div class="section" id="at-a-glance">
+  <div class="section-label">Visual overview</div>
+  <h2>Meeting arc — 100 minutes, dual audience</h2>
+
+  <div class="diagram-wrap">
+    <svg width="100%" viewBox="0 0 680 318" role="img">
+      <title>May 2026 family office meeting arc — 100 minutes, dual audience</title>
+      <desc>Five-phase swimlane diagram with investor row, client row, and confidence indicators per phase</desc>
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#6B7A8D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+
+      <!-- Diagram label -->
+      <text font-family="Arial,sans-serif" font-size="12" fill="#6B7A8D" x="340" y="18" text-anchor="middle">May 2026 · family office meeting arc · 100 minutes · dual audience</text>
+
+      <!-- PHASE HEADERS (gray) -->
+      <!-- P1 -->
+      <rect x="100" y="28" width="100" height="54" rx="6" fill="#D3D1C7" stroke="#B4B2A9" stroke-width="0.5"/>
+      <text font-family="Arial,sans-serif" font-size="14" font-weight="500" fill="#2C2C2A" x="150" y="50" text-anchor="middle" dominant-baseline="central">Opening</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#5F5E5A" x="150" y="70" text-anchor="middle" dominant-baseline="central">20 min</text>
+      <!-- P2 -->
+      <rect x="210" y="28" width="100" height="54" rx="6" fill="#D3D1C7" stroke="#B4B2A9" stroke-width="0.5"/>
+      <text font-family="Arial,sans-serif" font-size="14" font-weight="500" fill="#2C2C2A" x="260" y="50" text-anchor="middle" dominant-baseline="central">Framework</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#5F5E5A" x="260" y="70" text-anchor="middle" dominant-baseline="central">20 min</text>
+      <!-- P3 -->
+      <rect x="320" y="28" width="100" height="54" rx="6" fill="#D3D1C7" stroke="#B4B2A9" stroke-width="0.5"/>
+      <text font-family="Arial,sans-serif" font-size="14" font-weight="500" fill="#2C2C2A" x="370" y="50" text-anchor="middle" dominant-baseline="central">Meet TARA</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#5F5E5A" x="370" y="70" text-anchor="middle" dominant-baseline="central">15 min</text>
+      <!-- P4 -->
+      <rect x="430" y="28" width="100" height="54" rx="6" fill="#D3D1C7" stroke="#B4B2A9" stroke-width="0.5"/>
+      <text font-family="Arial,sans-serif" font-size="14" font-weight="500" fill="#2C2C2A" x="480" y="50" text-anchor="middle" dominant-baseline="central">Live demos</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#5F5E5A" x="480" y="70" text-anchor="middle" dominant-baseline="central">30 min</text>
+      <!-- P5 -->
+      <rect x="540" y="28" width="100" height="54" rx="6" fill="#D3D1C7" stroke="#B4B2A9" stroke-width="0.5"/>
+      <text font-family="Arial,sans-serif" font-size="14" font-weight="500" fill="#2C2C2A" x="590" y="50" text-anchor="middle" dominant-baseline="central">Close</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#5F5E5A" x="590" y="70" text-anchor="middle" dominant-baseline="central">15 min</text>
+      <!-- Arrows between phases -->
+      <line x1="200" y1="55" x2="210" y2="55" stroke="#6B7A8D" stroke-width="1.2" marker-end="url(#arr)"/>
+      <line x1="310" y1="55" x2="320" y2="55" stroke="#6B7A8D" stroke-width="1.2" marker-end="url(#arr)"/>
+      <line x1="420" y1="55" x2="430" y2="55" stroke="#6B7A8D" stroke-width="1.2" marker-end="url(#arr)"/>
+      <line x1="530" y1="55" x2="540" y2="55" stroke="#6B7A8D" stroke-width="1.2" marker-end="url(#arr)"/>
+
+      <!-- Row label: Investor -->
+      <text font-family="Arial,sans-serif" font-size="12" fill="#534AB7" x="88" y="124" text-anchor="end">Investor</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#534AB7" x="88" y="138" text-anchor="end">lens</text>
+
+      <!-- INVESTOR ROW (purple) -->
+      <rect x="100" y="96" width="100" height="64" rx="4" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="0.5"/>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#3C3489" x="150" y="114" text-anchor="middle">Credentials</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#3C3489" x="150" y="130" text-anchor="middle">Market vision</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#3C3489" x="150" y="146" text-anchor="middle">Invest. case</text>
+
+      <rect x="210" y="96" width="100" height="64" rx="4" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="0.5"/>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#3C3489" x="260" y="114" text-anchor="middle">SM 4 horizons</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#3C3489" x="260" y="130" text-anchor="middle">Renato engine</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#3C3489" x="260" y="146" text-anchor="middle">Instit. grade</text>
+
+      <rect x="320" y="96" width="100" height="64" rx="4" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="0.5"/>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#3C3489" x="370" y="114" text-anchor="middle">Platform status</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#3C3489" x="370" y="130" text-anchor="middle">Architecture</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#3C3489" x="370" y="146" text-anchor="middle">Roadmap</text>
+
+      <rect x="430" y="96" width="100" height="64" rx="4" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="0.5"/>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#3C3489" x="480" y="114" text-anchor="middle">Tech depth</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#3C3489" x="480" y="130" text-anchor="middle">Data security</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#3C3489" x="480" y="146" text-anchor="middle">CaaS model</text>
+
+      <rect x="540" y="96" width="100" height="64" rx="4" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="0.5"/>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#3C3489" x="590" y="114" text-anchor="middle">Thesis + ask</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#3C3489" x="590" y="130" text-anchor="middle">Due diligence</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#3C3489" x="590" y="146" text-anchor="middle">Next steps</text>
+
+      <!-- Row label: Client -->
+      <text font-family="Arial,sans-serif" font-size="12" fill="#028090" x="88" y="200" text-anchor="end">Client</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#028090" x="88" y="214" text-anchor="end">lens</text>
+
+      <!-- CLIENT ROW (teal) -->
+      <rect x="100" y="172" width="100" height="64" rx="4" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#085041" x="150" y="190" text-anchor="middle">WH mission</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#085041" x="150" y="206" text-anchor="middle">Why TARA</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#085041" x="150" y="222" text-anchor="middle">Agenda</text>
+
+      <rect x="210" y="172" width="100" height="64" rx="4" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#085041" x="260" y="190" text-anchor="middle">Horizon logic</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#085041" x="260" y="206" text-anchor="middle">Risk clarity</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#085041" x="260" y="222" text-anchor="middle">Simulator</text>
+
+      <rect x="320" y="172" width="100" height="64" rx="4" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#085041" x="370" y="190" text-anchor="middle">TARA intro</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#085041" x="370" y="206" text-anchor="middle">Talk to TARA</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#085041" x="370" y="222" text-anchor="middle">Open Q&amp;A</text>
+
+      <rect x="430" y="172" width="100" height="64" rx="4" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#085041" x="480" y="190" text-anchor="middle">CoreLens (brief)</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#085041" x="480" y="206" text-anchor="middle">Portfolio talk</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#085041" x="480" y="222" text-anchor="middle">Vineyard case</text>
+
+      <rect x="540" y="172" width="100" height="64" rx="4" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#085041" x="590" y="190" text-anchor="middle">Q&amp;A feedback</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#085041" x="590" y="206" text-anchor="middle">Onboard path</text>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#085041" x="590" y="222" text-anchor="middle">Follow-up</text>
+
+      <!-- CONFIDENCE ROW -->
+      <rect x="100" y="248" width="100" height="18" rx="3" fill="#D3D1C7" stroke="#B4B2A9" stroke-width="0.5"/>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#444441" x="150" y="261" text-anchor="middle">Deck</text>
+      <rect x="210" y="248" width="100" height="18" rx="3" fill="#FAC775" stroke="#EF9F27" stroke-width="0.5"/>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#412402" x="260" y="261" text-anchor="middle">Partial live</text>
+      <rect x="320" y="248" width="100" height="18" rx="3" fill="#D3D1C7" stroke="#B4B2A9" stroke-width="0.5"/>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#444441" x="370" y="261" text-anchor="middle">Narrative</text>
+      <rect x="430" y="248" width="100" height="18" rx="3" fill="#9FE1CB" stroke="#1D9E75" stroke-width="0.5"/>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#04342C" x="480" y="261" text-anchor="middle">Live + stub</text>
+      <rect x="540" y="248" width="100" height="18" rx="3" fill="#D3D1C7" stroke="#B4B2A9" stroke-width="0.5"/>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#444441" x="590" y="261" text-anchor="middle">Discussion</text>
+
+      <!-- LEGEND -->
+      <rect x="100" y="278" width="10" height="10" rx="2" fill="#9FE1CB"/>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#5F6E82" x="114" y="288">Live</text>
+      <rect x="155" y="278" width="10" height="10" rx="2" fill="#FAC775"/>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#5F6E82" x="169" y="288">Partial / stub</text>
+      <rect x="260" y="278" width="10" height="10" rx="2" fill="#D3D1C7"/>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#5F6E82" x="274" y="288">Deck / discussion</text>
+      <rect x="395" y="278" width="10" height="10" rx="2" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="0.5"/>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#534AB7" x="409" y="288">Investor priority</text>
+      <rect x="510" y="278" width="10" height="10" rx="2" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
+      <text font-family="Arial,sans-serif" font-size="12" fill="#028090" x="524" y="288">Client priority</text>
+    </svg>
+  </div>
+
+  <h2 style="margin-top:40px">Meeting at a glance</h2>
+  <p>Brian: this table is the whole playbook. The sections below give each phase its full detail.</p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>#</th><th>Phase</th><th>Time</th><th>Speaker(s)</th><th>Investor priority</th><th>Client priority</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-phase">01</td>
+        <td><strong>Opening &amp; credentials</strong></td>
+        <td>20 min</td>
+        <td>Brian + Anthony</td>
+        <td>Team, market vision, investment case</td>
+        <td>WH mission, why TARA, agenda</td>
+        <td><span class="badge badge-deck">Deck</span></td>
+      </tr>
+      <tr>
+        <td class="col-phase">02</td>
+        <td><strong>SM &amp; Renato framework</strong></td>
+        <td>20 min</td>
+        <td>Lotta + Renato (optional)</td>
+        <td>Institutional edge, risk architecture</td>
+        <td>4-horizon logic, risk clarity, simulator</td>
+        <td><span class="badge badge-partial">Partial live</span></td>
+      </tr>
+      <tr>
+        <td class="col-phase">03</td>
+        <td><strong>Meet TARA + open Q&amp;A</strong></td>
+        <td>15 min</td>
+        <td>Christoph or Brian</td>
+        <td>Platform maturity, roadmap</td>
+        <td>Talk to TARA, open questions</td>
+        <td><span class="badge badge-deck">Narrative + live</span></td>
+      </tr>
+      <tr>
+        <td class="col-phase">04</td>
+        <td><strong>Live demonstrations</strong></td>
+        <td>30 min</td>
+        <td>Christoph (operator) + Lotta</td>
+        <td>Tech depth, security, CaaS model</td>
+        <td>CoreLens, portfolio talk, Vineyard</td>
+        <td><span class="badge badge-live">Live + stub</span></td>
+      </tr>
+      <tr>
+        <td class="col-phase">05</td>
+        <td><strong>Discussion &amp; close</strong></td>
+        <td>15 min</td>
+        <td>Brian + Christoph</td>
+        <td>Investment thesis, due diligence path</td>
+        <td>Q&amp;A, onboarding conversation</td>
+        <td><span class="badge badge-deck">Discussion</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="pull-quote">
+    "The meeting should feel like one coherent experience with TARA as the protagonist — not a product presentation followed by a demo."
+    <cite>— Design principle for the May meetings</cite>
+  </div>
+</div>
+
+<!-- CREDENTIALS -->
+<div class="section" id="credentials">
+  <div class="section-label">Reference material — Phase 01</div>
+  <h2>WH credentials, mission &amp; differentiation</h2>
+
+  <h3>The mission statement</h3>
+  <div class="script-box">
+    <div class="script-label">Mission — verbatim from WH website</div>
+    "Wealth Horizons was founded on a simple conviction: that families of significance deserve decision intelligence that is equal to the complexity of what they face."
+  </div>
+  <p>Elaboration: "Most advisors give their clients information. The best give knowledge. We give wisdom — the ability to know which model is right for which decision, and the discipline to apply it even under pressure. That is what TARA makes possible at scale."</p>
+
+  <h3>The team — credentials to cover</h3>
+  <table class="data-table">
+    <thead><tr><th>Person</th><th>Role</th><th>Key credential</th><th>One-line differentiator</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Brian Singer, CFA</strong></td><td>CEO</td>
+        <td><em>Investment Leadership and Portfolio Management</em>, Wiley 2009; CFA Research Foundation 2025</td>
+        <td>"Brian has been writing the frameworks that institutional investors use. We are building the platform that gives families access to that."</td>
+      </tr>
+      <tr>
+        <td><strong>Lotta Moberg, PhD, CFA</strong></td><td>CIO</td>
+        <td><em>Political Economy of Special Economic Zones</em>, Routledge 2017; CFA Research Foundation 2025</td>
+        <td>"Lotta brings rigorous institutional-grade investment thinking — the kind that usually requires a $10bn fund to access."</td>
+      </tr>
+      <tr>
+        <td><strong>Renato Staub, PhD</strong></td><td>CRO</td>
+        <td><em>JPM 2004</em> (hierarchy of investment choice); <em>JAM 2013</em> (value-based allocation); <em>JPM 2003</em> with Singer &amp; Terhaar</td>
+        <td>"Renato's Guardian Intelligence is the only forward-looking geometric risk model purpose-built for family wealth. It sees the risk other models miss."</td>
+      </tr>
+      <tr>
+        <td><strong>Anthony DeChellis</strong></td><td>Co-founder</td>
+        <td>Former CEO, Credit Suisse Americas; deep family office network</td>
+        <td>"Anthony brings the client relationships and distribution credibility that translate the platform into a real market."</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="picture-note">
+    <div class="picture-icon">📸</div>
+    <div><strong>Pictures for Phase 01</strong>
+    Professional headshots of Brian, Lotta, Renato, Anthony. WH website abstract team image. A multigenerational family in an authentic European setting — not stock-photo. Warm but not sentimental.</div>
+  </div>
+</div>
+
+<!-- PHASE 01 -->
+<div class="page-break"></div>
+<div class="phase-header" id="phase1">
+  <div class="phase-number">01</div>
+  <div class="phase-title-block">
+    <div class="phase-title">Opening &amp; WH Credentials</div>
+    <div class="phase-meta">20 minutes · Brian Singer + Anthony DeChellis · 3–5 slide deck</div>
+  </div>
+  <div class="phase-confidence conf-deck">Deck</div>
+</div>
+
+<div class="section">
+  <h3>Objective</h3>
+  <p>Establish credibility and set the narrative frame. Open not as a pitch but as the beginning of an important conversation. The room should know exactly who they are dealing with and why this matters.</p>
+
+  <h3>Opening framing</h3>
+  <div class="script-box">
+    <div class="script-label">Suggested opening — Brian Singer</div>
+    "Thank you for making the time. We designed this meeting to be an experience, not a presentation. By the end of the next 90 minutes, you will have had a real conversation with TARA — not a demo, a conversation — and you will have a clear sense of what it means to have decision intelligence genuinely equal to the complexity of running a family of significance. Before we get there, I want to spend a few minutes on why we built this, and who built it."
+    <div class="script-speaker">Speaker: Brian Singer</div>
+  </div>
+
+  <h3>Deck content — 3–5 slides</h3>
+  <p><strong>Slide 1 — Mission.</strong> "Smarter decisions for stronger families and lasting wealth." The 200-decisions premise. The five pivotal decision types.</p>
+  <p><strong>Slide 2 — The problem with existing advice.</strong> Data → Information → Knowledge → Wisdom pyramid. Most advisors give information; WH gives wisdom. Human cognitive limits.</p>
+  <p><strong>Slide 3 — The team.</strong> Four published practitioners. One credential per person that signals quality of thinking.</p>
+  <p><strong>Slide 4 — Platform overview (optional).</strong> TARA, Five Capitals, Guardian Intelligence. One visual, one sentence.</p>
+  <p><strong>Slide 5 — Agenda.</strong> What the next 80 minutes looks like.</p>
+
+  <div class="audience-grid">
+    <div class="audience-box investor">
+      <div class="audience-label">Investor emphasis</div>
+      <ul>
+        <li>Emphasise publication track record — intellectual moat</li>
+        <li>Frame as platform business: CaaS model, WH is instance one</li>
+        <li>Family offices shifting to long-horizon strategies — market timing</li>
+        <li>Signal commercial structure early: anchor clients + co-investor opportunity</li>
+      </ul>
+    </div>
+    <div class="audience-box client">
+      <div class="audience-label">Client emphasis</div>
+      <ul>
+        <li>Lead with the problem: "Your family makes ~200 decisions that determine your legacy"</li>
+        <li>Five Capitals — make it personal: "Financial is only one dimension"</li>
+        <li>Set the expectation: "TARA is not a dashboard. She is a thinking companion."</li>
+        <li>Frame Phase 03 as: "In a moment you will meet her and be able to ask her anything"</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Transition to Phase 02</h3>
+  <div class="script-box">
+    <div class="script-label">Transition — Brian to Lotta</div>
+    "Before you meet TARA, you need to understand what she is built on. Because what makes TARA different is not the AI — it is the intellectual framework underneath it. Lotta, tell them about the investment engine."
+    <div class="script-speaker">Speaker: Brian Singer</div>
+  </div>
+</div>
+
+<!-- PHASE 02 -->
+<div class="page-break"></div>
+<div class="phase-header" id="phase2">
+  <div class="phase-number">02</div>
+  <div class="phase-title-block">
+    <div class="phase-title">Investment Framework — SM &amp; Renato</div>
+    <div class="phase-meta">20 minutes · Lotta Moberg leads · Renato Staub participates if audience warrants it</div>
+  </div>
+  <div class="phase-confidence conf-partial">Partial live</div>
+</div>
+
+<div class="section">
+  <div class="callout optional">
+    <strong>Renato's participation is optional — decide per meeting</strong>
+    Renato is not giving a lecture to non-specialists. His Guardian Intelligence simulator is shown in every meeting regardless. His live participation is reserved for meetings where the audience includes quantitatively sophisticated participants (institutional investors, CIOs, CFOs with quant background). Lotta covers the Renato framework at an accessible level in all meetings. The simulator should be offered as a self-service tool for interested clients post-meeting.
+  </div>
+
+  <h3>Objective</h3>
+  <p>Demonstrate that WH has a genuinely differentiated, institutional-grade investment and risk framework. The "ticket to the concert" — without this, the TARA demonstration has no credibility foundation.</p>
+
+  <div class="callout warning">
+    <strong>Critical framing note — do not confuse frameworks with scenarios</strong>
+    Singer Moberg produces 4-horizon portfolio <em>assessments</em> — not "scenarios." TARA's Efficiency / Cohesion / Legacy scenarios are TARA's own decision structuring construct, produced in Phase 04. Use the words: assessment, allocation, horizon, positioning, valuation gap, risk signal.
+  </div>
+
+  <h3>Singer Moberg — 4-horizon framework (Lotta, 10 min, all meetings)</h3>
+  <p><strong>Core message:</strong> "Most advisors give you a risk bucket. We give you a portfolio structured across four nested time horizons — each with its own purpose, allocation logic, and covariance model."</p>
+
+  <table class="data-table">
+    <thead><tr><th>Horizon</th><th>Time frame</th><th>Logic</th><th>Client meaning</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Policy</strong></td><td>Decades</td><td>Global market equilibrium (GCMI). Passive foundation including private assets.</td><td>"Your permanent anchor. Set once, adjusted rarely."</td></tr>
+      <tr><td><strong>Strategic</strong></td><td>5–10 years</td><td>Adjust Policy for personal preferences (ESG, geography) and existing exposures.</td><td>"Personalised to your circumstances and values."</td></tr>
+      <tr><td><strong>Dynamic</strong></td><td>6 mo – 5 yr</td><td>Exploit price-to-value gaps. PAR: exposure proportional to valuation gap. Tides.</td><td>"Where we actively add value. Buying when markets are cheap."</td></tr>
+      <tr><td><strong>Tactical</strong></td><td>Seconds – 6 mo</td><td>Short-horizon positioning. Waves and ripples.</td><td>"Opportunistic. Some clients use this; many don't need it."</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Renato Staub — Guardian Intelligence</h3>
+
+  <div class="callout optional">
+    <strong>Two tracks — choose per meeting</strong><br>
+    <strong>Track A — Lotta presents Renato framework (all meetings):</strong> accessible 8-minute overview covering the three innovations in plain language. Simulator shown always.<br><br>
+    <strong>Track B — Renato participates (specialist audiences only):</strong> Renato presents the mathematical framework in depth, runs the interactive simulator live, fields technical questions. Only when the room has quant-oriented participants who will genuinely engage.
+  </div>
+
+  <h4>Track A — Lotta presents (plain language, all meetings)</h4>
+  <p><strong>Core message:</strong> "Traditional risk models are backward-looking. When volatility spikes — exactly when you need your risk model most — they systematically understate your actual exposure. The Guardian Intelligence Engine fixes this."</p>
+  <p><strong>Three points to cover:</strong></p>
+  <ul style="padding-left:20px; font-size:14px; line-height:1.8; margin-bottom:12px">
+    <li><strong>Risk compounds, it doesn't add.</strong> In a high-stress regime, what looks like a portfolio with β = 0.50 is actually carrying β = 0.91 in realized risk. Traditional portfolios carry 82% more market risk than measured. (Show the Hidden Beta Drift chart.)</li>
+    <li><strong>PAR: proportional allocation rule.</strong> We size positions proportional to the valuation gap — when markets are cheap, we increase exposure; when expensive, we reduce. Mathematical discipline. No emotion. (Show the PAR convexity gain chart.)</li>
+    <li><strong>Forward-looking, not backward.</strong> 500 independent 30-year simulations validate this. PAR delivers structural convexity and drawdown protection — not outperformance promises.</li>
+  </ul>
+
+  <h4>Simulator — shown in every meeting</h4>
+  <div class="callout">
+    <strong>Guardian Intelligence simulator (singermobergstaub.manus.space)</strong>
+    Show the Value-Price Gap simulation and Monte Carlo validation live in every meeting. Adjust one or two parameters (mean reversion speed, PAR scaling factor) to show it responding. Keep it to 3 minutes. Offer the link to interested participants as a self-service exploration tool — a "light version" they can use independently after the meeting.
+  </div>
+
+  <h4>Track B — Renato presents (quant-specialist audiences, optional)</h4>
+  <p>Renato covers the mathematical framework in depth: geometric risk aggregation formula, PAR derivation, multilayer covariance architecture (7–8 layers), horizon-specific matrices. Fields technical questions on the model. Duration: up to 15 minutes if the room warrants it — compress Phase 03 accordingly.</p>
+
+  <div class="audience-grid">
+    <div class="audience-box investor">
+      <div class="audience-label">Investor emphasis</div>
+      <ul>
+        <li>Peer-reviewed publications — intellectual moat, not market intuition</li>
+        <li>Only forward-looking, internally consistent model at this level for family office context</li>
+        <li>Guardian Intelligence is proprietary IP — the model belongs to WH</li>
+        <li>500 Monte Carlo simulations = verifiable, not aspirational</li>
+      </ul>
+    </div>
+    <div class="audience-box client">
+      <div class="audience-label">Client emphasis</div>
+      <ul>
+        <li>"Volatility in Dynamic horizon = opportunity, not enemy" — counterintuitive and memorable</li>
+        <li>If Renato alert is available for demo family: "TARA would have surfaced this before your quarterly meeting"</li>
+        <li>Offer the simulator link as a take-away: "You can explore this yourself"</li>
+        <li>Keep the math accessible — the point is <em>forward-looking</em>, not <em>backward-looking</em></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="picture-note">
+    <div class="picture-icon">📊</div>
+    <div><strong>Pictures / visuals for Phase 02</strong>
+    SM: Investor Life Cycle chart, 4-horizon nested bar, Policy→Tactical allocation progression pies. Renato: Guardian Intelligence architecture diagram, Hidden Beta Drift chart (β curve), PAR convexity gain chart, 500-simulation Monte Carlo output, 4-horizon covariance table.</div>
+  </div>
+
+  <h3>Transition to Phase 03</h3>
+  <div class="script-box">
+    <div class="script-label">Transition — Lotta to Christoph or Brian</div>
+    "So that is the engine. Now I want you to meet the companion who is built on top of it — and more than that, I want to give you a chance to speak with her directly."
+    <div class="script-speaker">Speaker: Lotta Moberg</div>
+  </div>
+</div>
+
+<!-- PHASE 03 -->
+<div class="page-break"></div>
+<div class="phase-header" id="phase3">
+  <div class="phase-number">03</div>
+  <div class="phase-title-block">
+    <div class="phase-title">Meet TARA — Introduction &amp; Open Conversation</div>
+    <div class="phase-meta">15 minutes · Christoph Zahneissen or Brian Singer · Narrative intro + live open Q&amp;A with TARA</div>
+  </div>
+  <div class="phase-confidence conf-deck">Narrative + live</div>
+</div>
+
+<div class="section">
+  <h3>Objective</h3>
+  <p>Introduce TARA as an intelligent presence, not a product. Then immediately give participants the chance to speak with her directly — ask her anything, including about the SM/Renato framework, about the Five Capitals, about herself. This open conversation dissolves the "demo" atmosphere and makes the experience personal. Phase 03 bridges naturally into Phase 04.</p>
+
+  <h3>The TARA introduction</h3>
+  <div class="script-box">
+    <div class="script-label">Introduction — Christoph Zahneissen or Brian Singer</div>
+    "TARA stands for Trusted Advisor for Rational Action. But that is not really who she is.
+
+    She is the infrastructure that makes human judgment better. She does not replace your advisor. She does not replace your family's wisdom. She holds the full picture — across all five dimensions of your wealth, across all four time horizons — so that when the important moments arrive, you are not making decisions from memory and emotion alone.
+
+    TARA knows your NorthStar — the values that define what actually matters to your family. She knows which family member holds which decision role. She knows your financial position across all four horizons right now. And she notices things before you think to ask.
+
+    What I'd like to do now is introduce you to her directly. You can ask her anything — how she works, what the Singer Moberg framework means for your situation, how she thinks about risk. Let's start the conversation."
+    <div class="script-speaker">Speaker: Christoph Zahneissen or Brian Singer</div>
+  </div>
+
+  <h3>Open conversation with TARA (8–10 min)</h3>
+  <p>This is an unscripted live exchange. TARA is running with the preloaded demo family context. Participants can ask her anything. The operator (Christoph) types or speaks their questions into the TARA interface.</p>
+
+  <p><strong>Seed questions if the room is quiet:</strong></p>
+  <ul style="padding-left:20px; font-size:14px; line-height:1.9; margin-bottom:12px">
+    <li>"TARA, can you explain how the Singer Moberg four horizons would apply to a family like ours?"</li>
+    <li>"What is the Proportional Allocation Rule and why does it matter?"</li>
+    <li>"How do you think about family decisions differently from financial decisions?"</li>
+    <li>"What does the NorthStar profile tell you about a family, and how do you build it?"</li>
+    <li>"What would you notice about a family that their advisors might miss?"</li>
+  </ul>
+
+  <div class="callout">
+    <strong>Engineering note — TARA must be ready for freeform Q&amp;A in Phase 03</strong>
+    TARA should be loaded with: (a) the SM and Renato framework content in P3-002 so she can explain both at an accessible level; (b) the Five Capitals and NorthStar framework content so she can explain herself; (c) the demo family context (Müller family) so she can give contextualised answers when asked. PT-1 conversational guidance handles all of these — no special pipeline needed for this phase.
+  </div>
+
+  <div class="audience-grid">
+    <div class="audience-box investor">
+      <div class="audience-label">Investor emphasis</div>
+      <ul>
+        <li>Note aloud: "What you're seeing is PT-1 — the conversational guidance prompt type. It assembles context from CoreView, the personal knowledge base, and the SponsorSphere in real time, then adapts tone to the recipient profile."</li>
+        <li>The live Q&amp;A demonstrates scalability: TARA handles freeform questions without scripting</li>
+      </ul>
+    </div>
+    <div class="audience-box client">
+      <div class="audience-label">Client emphasis</div>
+      <ul>
+        <li>Let the conversation go where the participants take it — this is the moment the experience becomes personal</li>
+        <li>If a participant asks something personal ("What would you notice about my family?"), TARA should gently note she would need to build their profile first — and offer the NorthStar session as the next step</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Brief architecture note (optional, 3 min, investor audiences)</h3>
+  <p>If the audience includes investors who want to understand the platform, cover these three points only — keep it very short:</p>
+  <ul style="padding-left:20px; font-size:14px; line-height:1.9; margin-bottom:12px">
+    <li><strong>Chinese Wall.</strong> PersonalSphere / SponsorSphere / CoreSphere — cryptographic isolation. WH advisors never see raw family conversations.</li>
+    <li><strong>Five Capitals Knowledge Graph.</strong> Every family member's position across all five capitals at each of the four SM time horizons.</li>
+    <li><strong>CaaS model.</strong> WH is the first deployment. The architecture supports additional white-label instances without rebuilding.</li>
+  </ul>
+
+  <h3>Transition to Phase 04</h3>
+  <div class="script-box">
+    <div class="script-label">Transition — into live demos</div>
+    "Let me now show you TARA in a more structured context — starting with something that takes about two minutes and tells TARA quite a lot about how you think."
+    <div class="script-speaker">Speaker: Christoph Zahneissen or Brian Singer</div>
+  </div>
+</div>
+
+<!-- PHASE 04 -->
+<div class="page-break"></div>
+<div class="phase-header" id="phase4">
+  <div class="phase-number">04</div>
+  <div class="phase-title-block">
+    <div class="phase-title">Live Demonstrations — Interactive Session</div>
+    <div class="phase-meta">30 minutes · Christoph Zahneissen operates · Three sub-demos: CoreLens → Portfolio · Vineyard</div>
+  </div>
+  <div class="phase-confidence conf-live">Live + stub</div>
+</div>
+
+<div class="section">
+  <div class="callout critical">
+    <strong>This is the most important phase.</strong>
+    Phase 04 is where perception shifts from "interesting platform" to "different category of product." Keep it interactive — participants ask questions throughout, Christoph operates TARA and responds to what the room wants to explore. The Vineyard prospective flow, if working, is the defining moment of the meeting.
+  </div>
+
+  <h3>4a — CoreLens: personalisation signal (3–4 min maximum)</h3>
+
+  <div class="callout">
+    <strong>Keep CoreLens brief — it is a signal, not a session</strong>
+    CoreLens shows that TARA takes personalisation to a fundamentally different level. It should take 3–4 minutes at most and should not turn into a personality discussion or psychology exercise. The point is simple: TARA adapts to how each person actually thinks. Show the concept, show the contrast, move on.
+  </div>
+
+  <div class="script-box">
+    <div class="script-label">CoreLens framing</div>
+    "Before I show you TARA in context — let me show you one thing that makes her different from any AI you've encountered. She doesn't speak to everyone the same way. She adapts to how you think. [Name], would you be willing to answer a few quick questions? It takes about two minutes."
+    <div class="script-speaker">Speaker: Christoph Zahneissen</div>
+  </div>
+
+  <p><strong>After CoreLens:</strong> Show the spectrum output briefly. Then show TARA's contrasting responses to the same question with two different profiles — one analytical (data-first), one relational (narrative-first). That contrast is the point. Don't explain the psychology further — let it speak for itself. Move on.</p>
+
+  <div class="audience-grid">
+    <div class="audience-box investor">
+      <div class="audience-label">Investor framing</div>
+      <ul>
+        <li>"The personalisation layer is architectural — every prompt adapts to the recipient profile. This scales without adding headcount."</li>
+      </ul>
+    </div>
+    <div class="audience-box client">
+      <div class="audience-label">Client framing</div>
+      <ul>
+        <li>"TARA knows whether you need data first or context first. She adapts to you — not to a generic client."</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>4b — TARA live: portfolio conversation (10 min, interactive)</h3>
+  <p><strong>Demo family:</strong> "The Müller family" — European UHNW family, operating business, multi-generational structure, real estate, philanthropy. Profile preloaded.</p>
+  <p>This is not a scripted walkthrough — it is an interactive exploration. Christoph invites the room to ask questions. He routes them through TARA live.</p>
+
+  <p><strong>Suggested starting questions (let the room take it from here):</strong></p>
+  <ol style="padding-left:20px; font-size:14px; line-height:1.9; margin-bottom:12px">
+    <li>"TARA, how is the Müller family's portfolio positioned across the four horizons right now?"</li>
+    <li>"What is the current PAR signal for European equities?"</li>
+    <li>"Are there any structural risk alerts I should be aware of?"</li>
+  </ol>
+
+  <p><strong>Encourage audience questions:</strong> "What else would you want to ask TARA about a family portfolio? Ask her directly." Let the conversation run organically for 5–6 minutes.</p>
+
+  <div class="callout">
+    <strong>Engineering note</strong>
+    Portfolio conversation requires: preloaded Müller T-002 profile; SM content in P3-002 (singer_moberg_guidance) covering current horizon allocation state; T-003 stub returning at least one Renato risk flag for the Müller scenario. Coordinate with Alex — status required by April 28.
+  </div>
+
+  <h3>4c — TARA decision case: the Vineyard (15 min)</h3>
+  <p><strong>This is the most important demonstration in the meeting.</strong></p>
+
+  <div class="callout">
+    <strong>Prospective vs reactive — decide per meeting</strong>
+    <strong>Prospective (preferred):</strong> TARA detected the pattern without being asked. The Decision Maker first learns about the forming decision from TARA's brief. This is the architectural differentiator — show it if the pipeline is ready.<br><br>
+    <strong>Reactive (fallback):</strong> "Thomas wants to sell the Vineyard before year-end." TARA structures the decision. The six-section brief output is identical; only §1 differs.
+  </div>
+
+  <div class="script-box">
+    <div class="script-label">Prospective flow framing</div>
+    "I want to show you something that no human advisor can do consistently. The Müller family has been having conversations over the past weeks. TARA has been paying attention. Let me show you what she noticed — without anyone asking her to look."
+    <div class="script-speaker">Speaker: Christoph Zahneissen</div>
+  </div>
+
+  <p><strong>TARA's opening — prospective brief §1:</strong></p>
+  <div class="script-box">
+    <div class="script-label">TARA script — prospective brief §1</div>
+    "I have been watching a pattern across our recent conversations with the Müller family. Over the past six weeks, Thomas has mentioned the Vineyard three times unprompted. I have also observed a shift in his language around liquidity — shorter sentences, more questions, less resolution. I want to bring this to your attention before it becomes urgent. I have prepared a structured brief. This is the first time the decision will be presented to you directly."
+  </div>
+
+  <p><strong>Walk through the six-section brief — invite reactions at each section:</strong></p>
+  <ul style="padding-left:20px; font-size:14px; line-height:1.9; margin-bottom:12px">
+    <li><strong>§1 The situation.</strong> Pattern detected proactively. "What do you make of TARA noticing this before Thomas raised it?"</li>
+    <li><strong>§2 Decision type.</strong> Legacy Asset Transition. Type 1 (irreversible). Complex. High emotional intensity.</li>
+    <li><strong>§3 Three scenarios.</strong> Efficiency / Cohesion / Legacy. NorthStar Deviation flagged: "Note: the Efficiency scenario conflicts with Thomas's Legacy Capital priority." — "Does that ring true for families you know?"</li>
+    <li><strong>§4 Risk signals.</strong> Renato alert: Concentration Drift. Liquidity Illusion risk.</li>
+    <li><strong>§5 What TARA is watching.</strong> Monitoring conditions, advisor escalation trigger.</li>
+    <li><strong>§6 Your next step.</strong> RAPID role-specific CTA. "You are the decision maker. Here are the three paths."</li>
+  </ul>
+
+  <p>After the brief: invite questions. "What would you want to ask TARA about this situation? Go ahead — ask her directly."</p>
+
+  <div class="audience-grid">
+    <div class="audience-box investor">
+      <div class="audience-label">Investor framing — after demo</div>
+      <ul>
+        <li>"What you saw is the prospective flow — the Pattern Drift Detector running across session history. This runs through the full PT-1 to PT-5 pipeline: five distinct prompt types, 45-archetype decision library, 10-failure-mode library. Under 15 seconds in the background."</li>
+        <li>This capability does not exist anywhere else in family wealth management</li>
+      </ul>
+    </div>
+    <div class="audience-box client">
+      <div class="audience-label">Client framing — after demo</div>
+      <ul>
+        <li>"This is what it feels like to have someone always paying attention — even between meetings. TARA didn't wait for Thomas to raise the Vineyard. She noticed it first."</li>
+        <li>"Every family has decisions forming that nobody is yet naming. TARA is built to notice them before they become crises."</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="picture-note">
+    <div class="picture-icon">📸</div>
+    <div><strong>Pictures / visuals for Phase 04</strong>
+    CoreLens: spectrum output visualization; side-by-side TARA response contrast. Portfolio: TARA conversation interface on tablet/laptop; horizon allocation bar chart; Renato risk alert card. Vineyard: European vineyard photograph (warm, late afternoon, stone building); structured decision brief layout; NorthStar Deviation flag highlighted in §3.</div>
+  </div>
+</div>
+
+<!-- PHASE 05 -->
+<div class="page-break"></div>
+<div class="phase-header" id="phase5">
+  <div class="phase-number">05</div>
+  <div class="phase-title-block">
+    <div class="phase-title">Discussion &amp; Close</div>
+    <div class="phase-meta">15 minutes · Brian + Christoph · Structured Q&amp;A, not open-ended</div>
+  </div>
+  <div class="phase-confidence conf-deck">Discussion</div>
+</div>
+
+<div class="section">
+  <h3>Objective</h3>
+  <p>Move from demonstration to relevance. Shift from "here is what TARA can do" to "here is how this applies to your situation." Use specific questions — do not leave it as an open floor.</p>
+
+  <div class="script-box">
+    <div class="script-label">Discussion framing — Brian Singer</div>
+    "We've designed this time to understand your specific situation. What you just saw was the Müller family. The conversations that follow are where TARA starts to become relevant to your family — not to a demo family."
+    <div class="script-speaker">Speaker: Brian Singer</div>
+  </div>
+
+  <div class="audience-grid">
+    <div class="audience-box investor">
+      <div class="audience-label">Investor discussion questions</div>
+      <ul>
+        <li>"What would your diligence process look like from here?"</li>
+        <li>"How do you think about anchor-client economics in a platform business at this stage?"</li>
+        <li>"What concerns you most about AI in a family wealth context — what would de-risk that?"</li>
+        <li>"Is there a specific use case in your portfolio of family relationships where you immediately see TARA's value?"</li>
+      </ul>
+    </div>
+    <div class="audience-box client">
+      <div class="audience-label">Client discussion questions</div>
+      <ul>
+        <li>"Which of the three Vineyard scenarios resonated most with something your family is actually navigating?"</li>
+        <li>"How do you currently handle the governance of major family decisions — and where does that process feel most fragile?"</li>
+        <li>"What would you need to know about data privacy before you were comfortable with this level of AI involvement?"</li>
+        <li>"If we were to build a TARA profile for your family, what would you want her to know first?"</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Next step offers</h3>
+  <div class="script-box">
+    <div class="script-label">Client next step — Lotta or Christoph</div>
+    "The natural next step is a NorthStar session — a structured 60-minute conversation where we learn what matters most to your family across the Five Capitals. From that, we build a prototype profile and show you TARA in the context of your actual situation — not the Müller family, yours."
+    <div class="script-speaker">Speaker: Lotta Moberg or Christoph Zahneissen</div>
+  </div>
+  <div class="script-box">
+    <div class="script-label">Investor next step — Christoph</div>
+    "We'd like to schedule a technical deep-dive — 90 minutes, specifically on architecture, IP framework, and commercial structure. We can share the full master registry and financial model under NDA. What works in the next two weeks?"
+    <div class="script-speaker">Speaker: Christoph Zahneissen</div>
+  </div>
+
+  <h3>Close</h3>
+  <div class="script-box">
+    <div class="script-label">Closing — Brian Singer</div>
+    "Every generation of wealth faces its defining moment — the moment that tests whether the foundation was built to last. TARA was designed for that moment. We are glad you were here today, and we look forward to continuing this conversation."
+    <div class="script-speaker">Speaker: Brian Singer</div>
+  </div>
+</div>
+
+<!-- DEMO SCRIPTS -->
+<div class="section page-break" id="demo-scripts">
+  <div class="section-label">Engineering reference</div>
+  <h2>Demo scripts — the three TARA moments</h2>
+
+  <h3>Moment 1 — CoreLens (3–4 min, always brief)</h3>
+  <p><strong>Primary:</strong> Live survey with a consented participant. Show spectrum output. Show two contrasting TARA responses. Move on within 4 minutes.<br>
+  <strong>Fallback:</strong> Two preloaded profiles (INTJ and ESFJ). Show contrast in TARA responses. No live survey needed.</p>
+
+  <h3>Moment 2 — Portfolio conversation (10 min, interactive)</h3>
+  <p><strong>Primary:</strong> Live questions from the room routed through TARA, using preloaded Müller family profile + SM/Renato data.<br>
+  <strong>Fallback:</strong> Recorded/staged conversation. Hardcoded P3-002 content. Must not appear scripted.</p>
+
+  <h3>Moment 3 — Vineyard prospective brief (15 min)</h3>
+  <p><strong>Primary:</strong> Prospective flow — brief presented without user initiation. Decision Maker first learns about the forming decision from TARA.<br>
+  <strong>Fallback:</strong> Reactive flow — "Thomas wants to sell the Vineyard." Identical six-section brief output; only §1 opening differs.</p>
+</div>
+
+<!-- CONFIDENCE MAP -->
+<div class="section" id="confidence-map">
+  <div class="section-label">Engineering reference</div>
+  <h2>Demo confidence map</h2>
+  <table class="data-table">
+    <thead><tr><th>Element</th><th>Phase</th><th>Status target</th><th>Owner</th><th>Fallback</th></tr></thead>
+    <tbody>
+      <tr><td>CoreLens survey</td><td>4a</td><td><span class="badge badge-live">Live</span></td><td>Alex P.</td><td>Preloaded profiles</td></tr>
+      <tr><td>CoreLens → CoreView handoff</td><td>4a</td><td><span class="badge badge-partial">Partial</span></td><td>Alex P.</td><td>Manual profile load</td></tr>
+      <tr><td>TARA conversation UI (I-007)</td><td>3 + 4b</td><td><span class="badge badge-live">Live</span></td><td>Alex / Forte</td><td>—</td></tr>
+      <tr><td>Müller family T-002 profile</td><td>4b</td><td><span class="badge badge-live">Live</span></td><td>Christoph + Alex</td><td>—</td></tr>
+      <tr><td>P3-002 SM + Renato content</td><td>3 + 4b</td><td><span class="badge badge-partial">Partial</span></td><td>Lotta → Alex</td><td>Hardcoded stub</td></tr>
+      <tr><td>T-003 Renato stub (Vineyard)</td><td>4b/4c</td><td><span class="badge badge-partial">Partial</span></td><td>Renato → Alex</td><td>Narrative only</td></tr>
+      <tr><td>PT-1 conversational response</td><td>3 + 4b</td><td><span class="badge badge-live">Live</span></td><td>Alex (P3-005)</td><td>—</td></tr>
+      <tr><td>PT-2/3/4/5 decision pipeline</td><td>4c</td><td><span class="badge badge-partial">Partial</span></td><td>Alex / T-004</td><td>Reactive flow</td></tr>
+      <tr><td>Prospective drift detector</td><td>4c</td><td><span class="badge badge-partial">Partial</span></td><td>Alex / T-004</td><td>Reactive flow brief</td></tr>
+      <tr><td>Vineyard archetype (T-004b)</td><td>4c</td><td><span class="badge badge-live">Live</span></td><td>Alex</td><td>Hardcoded scenario seed</td></tr>
+      <tr><td>NorthStar Deviation (PT-4)</td><td>4c</td><td><span class="badge badge-partial">Partial</span></td><td>Alex</td><td>Hardcoded flag in brief</td></tr>
+      <tr><td>Renato simulator (all meetings)</td><td>2</td><td><span class="badge badge-live">Live</span></td><td>Lotta / Renato</td><td>Screenshot walkthrough</td></tr>
+    </tbody>
+  </table>
+  <div class="callout warning">
+    <strong>Critical path for May</strong>
+    The prospective flow drift detector is highest-risk. If not ready by May 10, switch to reactive flow for all meetings. Do not attempt prospective flow without two full end-to-end rehearsals in the week before.
+  </div>
+</div>
+
+<!-- OBJECTIONS -->
+<div class="section" id="objections">
+  <div class="section-label">Preparation</div>
+  <h2>Objection catalogue</h2>
+
+  <div class="objection-block">
+    <div class="obj-q">"Why do I need AI for this? My current advisors know my family well."</div>
+    <div class="obj-a">Your advisors know your family within the constraints of their attention — quarterly meetings, a few hours a year. They cannot simultaneously monitor your children's conversations, your liquidity trajectory across four time horizons, and pattern drift in how you talk about your operating company — and notice when those converge into a decision forming without you realising it. TARA can. She does not replace your advisors. She makes sure nothing falls between the meetings.
+      <div class="obj-owner">Best answered by: Brian Singer</div>
+    </div>
+  </div>
+
+  <div class="objection-block">
+    <div class="obj-q">"What happens to my family's data?"</div>
+    <div class="obj-a">Your personal data lives in your PersonalSphere — cryptographically isolated from WH's systems and every other family. WH advisors see structured analytical summaries that TARA generates — never your private conversations or raw data. The architecture enforces this at the API level; it is a technical constraint, not just a policy.
+      <div class="obj-owner">Best answered by: Christoph Zahneissen / Alex Papratilov</div>
+    </div>
+  </div>
+
+  <div class="objection-block">
+    <div class="obj-q">"Is this regulated? What are the compliance implications?"</div>
+    <div class="obj-a">TARA does not give financial advice — she gives decision intelligence and surfaces structured options for human advisors and family decision makers. The structured brief explicitly directs financial decisions to the WH advisor. Data residency, audit logs, consent management, and provenance tracking are architectural requirements. Specific regulatory questions by jurisdiction — we address those in a technical session.
+      <div class="obj-owner">Best answered by: Christoph Zahneissen / Brian Singer</div>
+    </div>
+  </div>
+
+  <div class="objection-block">
+    <div class="obj-q">"This is still prototype-grade. Why are you showing it now?"</div>
+    <div class="obj-a">Because the families and investors who will shape what this becomes need to be part of defining it — not inheriting a finished product. What you saw today is real: CoreLens works, the conversation pipeline works, the decision brief is structurally correct. The architecture is solid. We are showing it now because the right anchor relationships are built on shared understanding, not polished brochures.
+      <div class="obj-owner">Best answered by: Brian Singer</div>
+    </div>
+  </div>
+
+  <div class="objection-block">
+    <div class="obj-q">"I already have excellent advisors. Where does TARA fit?"</div>
+    <div class="obj-a">TARA works alongside your existing advisors. She surfaces what they might miss between conversations: the pattern in how your son talks about liquidity, the governance tension emerging before the board meeting, the NorthStar conflict in a scenario that looks financially optimal. She brings your advisors' attention to the right things at the right time. Think of her as the intelligence layer underneath the relationship — not a competing relationship.
+      <div class="obj-owner">Best answered by: Lotta Moberg</div>
+    </div>
+  </div>
+
+  <div class="objection-block">
+    <div class="obj-q">[Investor] "What is the path to commercial scale?"</div>
+    <div class="obj-a">WH is instance one of a CaaS (Companion as a Service) architecture. The platform is built to be white-labelled and deployed for other advisory contexts. Revenue combines platform fees from the CaaS layer with advisory relationship fees from WH's direct client relationships. The anchor client and investor relationships from May are the foundation of both revenue streams.
+      <div class="obj-owner">Best answered by: Christoph Zahneissen</div>
+    </div>
+  </div>
+</div>
+
+<!-- FAILURE PROTOCOL -->
+<div class="section" id="failure">
+  <div class="section-label">Contingency</div>
+  <h2>Failure protocol</h2>
+
+  <h3>Decision owner</h3>
+  <p><strong>Christoph Zahneissen</strong> is the demo operator and failure decision maker. If something breaks, Christoph decides immediately: retry, fallback, or skip. Nobody else intervenes.</p>
+
+  <h4>CoreLens fails (4a)</h4>
+  <p>Switch immediately to preloaded profiles. "Let me show you two profiles we prepared in advance." No explanation needed.</p>
+
+  <h4>TARA portfolio conversation fails (4b)</h4>
+  <p>Switch to recorded conversation backup. Brian narrates: "Let me walk you through the kind of conversation TARA has about a portfolio." Convert to narrative demonstration.</p>
+
+  <h4>Vineyard brief fails (4c)</h4>
+  <p>Switch to reactive flow script: "Thomas has just called to say he wants to sell the Vineyard." Brief output is identical; only §1 differs. Rehearsed and ready.</p>
+
+  <h4>Total TARA failure</h4>
+  <p>Switch to pre-loaded static walkthrough of the Vineyard brief (PDF or slides showing the six-section output). Christoph or Brian narrates. Lotta handles investment framework questions. <strong>Never let a technical failure end the meeting early.</strong></p>
+
+  <div class="callout warning">
+    <strong>Reframe, do not apologise</strong>
+    If a demo element fails, Brian reframes immediately: "This is exactly why early conversations like this matter — what we learn from you makes the system robust. You are seeing it at an honest moment." This is true, and it is the right thing to say.
+  </div>
+
+  <h3>Rehearsal requirement</h3>
+  <p>Minimum two full rehearsals of Phase 04 before the first May meeting, including at least one deliberate failure drill. Recommended: May 5–7. Christoph owns scheduling.</p>
+</div>
+
+<!-- PICTURE NOTES -->
+<div class="section" id="picture-notes">
+  <div class="section-label">Visual production</div>
+  <h2>Picture and visual notes — complete list</h2>
+
+  <div class="picture-note"><div class="picture-icon">📸</div><div><strong>Team portraits — Phase 01</strong> Professional headshots of Brian, Lotta, Renato, Anthony. Consistent lighting. Navy or neutral background. Must signal academic and institutional credibility.</div></div>
+  <div class="picture-note"><div class="picture-icon">📸</div><div><strong>Aspirational family moment — Phase 01</strong> Multigenerational family in an authentic European setting — dinner, property walk, meeting around a table. Warm but not sentimental. Not stock-photo generic.</div></div>
+  <div class="picture-note"><div class="picture-icon">📊</div><div><strong>SM framework visuals — Phase 02</strong> Investor Life Cycle chart. 4-horizon nested bar diagram. Policy→Strategic→Dynamic→Tactical allocation pies. Tides/waves/ripples conceptual illustration.</div></div>
+  <div class="picture-note"><div class="picture-icon">📊</div><div><strong>Renato / Guardian Intelligence visuals — Phase 02</strong> Guardian Intelligence Mathematical Foundation diagram. Hidden Beta Drift chart (β 0.50 → 0.91 curve). PAR convexity gain chart. 500-simulation Monte Carlo output. 4-horizon covariance table. Source: Guardian Intelligence website.</div></div>
+  <div class="picture-note"><div class="picture-icon">📊</div><div><strong>TARA interface screenshots — Phase 03 + 04</strong> TARA conversation UI. CoreLens survey in progress. Spectrum output. Six-section decision brief (Vineyard). NorthStar Deviation flag inline in §3. All retina resolution.</div></div>
+  <div class="picture-note"><div class="picture-icon">📸</div><div><strong>Vineyard photograph — Phase 04c</strong> European vineyard, warm light — Burgundy, Tuscany, or Rhine Valley. Rows of vines, stone building, late afternoon. License-cleared high resolution.</div></div>
+  <div class="picture-note"><div class="picture-icon">📊</div><div><strong>Five Capitals diagram — Phase 03</strong> Clean visual showing the five capitals in relationship — not a list. Interconnected. WH teal/navy palette.</div></div>
+  <div class="picture-note"><div class="picture-icon">📸</div><div><strong>WH website hero — ambient</strong> Hero image from wealthtara-myjqp68s.manus.space. Works as slide background. Already cleared for WH use.</div></div>
+</div>
+
+<div class="doc-footer">
+  <strong>Wealth Horizons · Family Office Meeting Playbook · May 2026 · Draft v0.2</strong><br>
+  Playbook owners: Christoph Zahneissen · Brian Singer · April 2026 · For internal circulation and team input<br>
+  Distribute to: Brian Singer · Lotta Moberg · Renato Staub · Christoph Zahneissen · Tim · Alex Papratilov · Jake · Jens Fauth<br>
+  Next step: Playbook meeting April 17 · Decisions required: Renato participation threshold per meeting, confidence levels, fallback approval, rehearsal schedule
+</div>
+
+</div>
+</body>
+</html>
